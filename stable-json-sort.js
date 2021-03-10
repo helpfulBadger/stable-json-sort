@@ -1,3 +1,4 @@
+//@ts-check
 /**
  * Call sort with any object or array and get back stable, recursively sorted JSON.stringfyable object.
  * @param {*} obj 
@@ -28,7 +29,7 @@ function sortObject( obj ){
     let result = {}
     let keys = Object.keys( obj )
     keys = keys.sort();
-    for ( key of keys ){
+    for ( let key of keys ){
         result[ key ] = sort( obj[ key ]);
     }
     return result;
@@ -36,7 +37,7 @@ function sortObject( obj ){
 
 function sortObjectArray( objects ){
     let results = []
-    for ( e of objects ){
+    for ( let e of objects ){
         e = sort( e )
         results.push( e );
     }
@@ -50,7 +51,7 @@ function sortArray( obj ) {
     let groups = groupByType( obj );
 
     let ordering = ["null", "boolean", "number", "string", "object", "array"]
-    for ( type of ordering ){
+    for ( let type of ordering ){
         if ( groups[type] ){
             switch ( type ) {
                 case "null":
@@ -173,15 +174,13 @@ function groupByType( obj ){
 }
 
 function getType( obj ){
-    let dataType = typeof obj;
-    if ( dataType == "object") {
-        if ( obj == null ){
-            dataType = "null"
-        } else if ( Array.isArray( obj ) ){
-            dataType = "array"
-        }
+    if ( obj === null ){
+        return "null";
     }
-    return dataType
+    if ( Array.isArray( obj ) ){
+        return "array";
+    }
+    return typeof obj
 }
 
 function isEmpty(obj) {
