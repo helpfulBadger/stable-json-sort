@@ -162,14 +162,12 @@ function compareObjects( a, b ){
 function groupByType( obj ){
     let result = {};
 
-    obj.map(
-        function(currentValue, /*index, arr*/ ){
-            let dataType = getType( currentValue );
-            if ( !result[ dataType ] ) result[ dataType ] = [];
-            result[ dataType ].push( currentValue );
-        }
-    );
-
+    for (const e of obj) {
+        let t = getType( e );
+        if ( !result[ t ] ) result[ t ] = [];
+        result[ t ].push( e );
+    }
+    
     return result;
 }
 
