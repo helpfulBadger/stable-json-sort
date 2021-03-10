@@ -1,6 +1,9 @@
-# stable-json-sort
+#!/usr/bin/env node
+const s = require('./stable-json-sort');
 
-## This library creates a stable sort of nested objects of valid JSON data types based on the following precedence:
+console.log( `
+
+This library creates a stable sort of nested objects of valid JSON data types based on the following precedence:
 * null
 * boolean
 * number
@@ -8,40 +11,22 @@
 * object
 * array
 
+`);
 
-## Here is an example of a complex object that challenges many sorting libraries
+console.log( `
+Here is an example of a complex object that challenges many sorting libraries
 
-``` javascript
-    [
-        [
-            [2,1],
-            [],
-            {"bc":2, "a":1},
-            {},
-            "before","a string", 
-            4.2e+2, 12, 
-            true, 8.7e-2, false, null, null, 
-            ["zaxby's", "pizza"], 
-            [true, false], 
-            [null, null] 
-        ], 
-        [2,1],
-        [],
-        {"bc":2, "a":1},
-        {},
-        "before","a string", 
-        4.2e+2, 12, 
-        true, 8.7e-2, true, false, 
-        null, null, 
-        ["zaxby's", "pizza"], 
-        [true, false], 
-        [null, null] 
-    ]
-```
+[[[2,1],[],{"bc":2, "a":1},{},"before","a string", 4.2e+2, 12, true, 8.7e-2, false, null, null, ["zaxby's", "pizza"], [true, false], [null, null] ], [2,1],[],{"bc":2, "a":1},{},"before","a string", 4.2e+2, 12, true, 8.7e-2, true, false, null, null, ["zaxby's", "pizza"], [true, false], [null, null] ]
 
-## The result when printed this way it makes the sorting precedence more clear:
+`)
+let result = s.sort( 
+    [[[2,1],[],{"bc":2, "a":1},{},"before","a string", 4.2e+2, 12, true, 8.7e-2, false, null, null, ["zaxby's", "pizza"], [true, false], [null, null] ], [2,1],[],{"bc":2, "a":1},{},"before","a string", 4.2e+2, 12, true, 8.7e-2, true, false, null, null, ["zaxby's", "pizza"], [true, false], [null, null] ]
+)
+console.log( "The sorted result is: \n" + JSON.stringify( result) )
 
-``` javascript
+
+console.log( `
+//When printed this way it makes the sorting precedence more clear:
     [
         null,null,                         // null elements will sort first in an array
         false,true,true,                   // followed by the other data types
@@ -68,4 +53,4 @@
         [1,2],
         ["pizza","zaxby's"]
     ]
-```
+`)

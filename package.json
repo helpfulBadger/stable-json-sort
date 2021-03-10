@@ -1,0 +1,28 @@
+{
+  "name": "stable-json-sort",
+  "version": "0.8.0",
+  "description": "A library to create a stable sort for hashing or more easily comparing JSON objects ",
+  "main": "demo.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helpfulBadger/stable-json-sort.git"
+  },
+  "keywords": [
+    "json",
+    "sort",
+    "recursive",
+    "stable"
+  ],
+  "author": "Helpful Badger!",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helpfulBadger/stable-json-sort/issues"
+  },
+  "homepage": "https://github.com/helpfulBadger/stable-json-sort#readme",
+  "dependencies": {
+    "jest": "^26.6.3"
+  }
+}
