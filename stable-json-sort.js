@@ -137,8 +137,8 @@ function compareEmpty( a, b ){
 }
 
 function compareObjects( a, b ){
-    let emptyObject = compareEmpty( a, b);
-    if ( emptyObject != 0 ) return emptyObject;
+    let sortDecision = compareEmpty( a, b);
+    if ( sortDecision != 0 ) return sortDecision;
 
     let aKeys = Object.keys( a ).sort();
     let bKeys = Object.keys( b ).sort();
