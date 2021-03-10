@@ -34,6 +34,16 @@ function sortObject( obj ){
     return result;
 }
 
+function sortObjectArray( objects ){
+    let results = []
+    for ( e of objects ){
+        e = sort( e )
+        results.push( e );
+    }
+    results = results.sort( compareElements );
+    return results;
+}
+
 function sortArray( obj ) {
     let results = [];
 
@@ -53,23 +63,13 @@ function sortArray( obj ) {
                     break;
                 case "array":
                 case "object":
-                    results = results.concat( recursivelySortObjects( groups[type] ) )
+                    results = results.concat( sortObjectArray( groups[type] ) )
                     break;
 //                default:
 //                    console.log(`ERROR: Unhandled type: ${type}`);
             }
         }
     }
-    return results;
-}
-
-function recursivelySortObjects( objects ){
-    let results = []
-    for ( e of objects ){
-        e = sort( e )
-        results.push( e );
-    }
-    results = results.sort( compareElements );
     return results;
 }
 
