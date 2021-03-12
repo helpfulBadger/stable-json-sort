@@ -1,4 +1,4 @@
-const s = require('./stable-json-sort');
+const s = require('./sort');
 
 describe('TEST isEmpty Function', () => {
     test.each([

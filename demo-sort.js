@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const s = require('./stable-json-sort');
+const s = require('./sort');
 
 console.log( `
 

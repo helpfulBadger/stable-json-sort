@@ -2,7 +2,7 @@
   "name": "stable-json-sort",
   "version": "0.8.0",
   "description": "A library to create a stable sort for hashing or more easily comparing JSON objects ",
-  "main": "demo.js",
+  "main": "extractFeatures.js",
   "scripts": {
     "test": "jest --verbose --coverage"
   },
@@ -23,6 +23,9 @@
   },
   "homepage": "https://github.com/helpfulBadger/stable-json-sort#readme",
   "dependencies": {
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "json8": "^1.0.3",
+    "json8-patch": "^1.0.4",
+    "json8-pointer": "^1.0.4"
   }
 }

@@ -1,6 +1,6 @@
 //@ts-check
 /**
- * Call sort with any object or array and get back stable, recursively sorted JSON.stringfyable object.
+ * Call sort with any object or array and get back stable, recursively sorted JSON.stringify-able object.
  * @param {*} obj 
  * @returns sorted object
  */
